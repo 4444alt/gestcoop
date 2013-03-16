@@ -1,0 +1,4 @@
+gestcoop
+========
+
+Gestionale Cooperato
