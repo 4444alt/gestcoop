@@ -49,5 +49,11 @@ class AuthManager {
         $db->query(QM::queryAuthentication($user, $pass));
         return $db->existRow();
     }
+    
+    public static function continueIfAuthenticated() {
+        SM::startSession();
+        if(!self::checkAuthentication())
+            header('Location: index.php');
+    }
 }
 ?>

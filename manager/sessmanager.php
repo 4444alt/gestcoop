@@ -12,7 +12,8 @@ class SM {
     private static $PASSWORD = 'y76tgrfy';
     
     public static function startSession() {
-        session_start();
+        if(session_status()!= PHP_SESSION_ACTIVE)
+            session_start();
         session_regenerate_id();
     }
     
