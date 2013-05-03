@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    require_once '/manager/authmanager.php';
+    AuthManager::continueIfAuthenticated();
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,7 +11,6 @@
     <body>
         <?php
             require_once '/manager/sessmanager.php';
-            SM::startSession();
             echo "Autenticato!" . "<br>";
             echo SM::getUser() . "<br>";
             echo SM::getPassword() . "<br>";
